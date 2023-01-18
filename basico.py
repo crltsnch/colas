@@ -14,4 +14,30 @@ def main():
     #Esto encola el número en la lista
     if option == 1:
         elemento = input('Introduzca el numero a encolar: ')
-        
+        cola.append(elemento)
+        print('Número encolado con éxito')
+        main()
+    
+    #Esta opción saca de la lista el numero en orden de ingreso
+    elif option == 2:
+        if len(cola)>0:
+            print('El numero: ', cola.pop(0), 'fue desencolado')
+            main()
+        else:
+            print('Cola vacía')
+            main() 
+
+    #Esta opción imprime en pantalla la cola
+    elif option == 3:
+        for i in cola:
+            print('Cola: ', i)       
+        main()
+    
+    #Esta opción permite salir de la ejecución del código
+    elif option == 4:
+        exit()
+    else:
+        print('Seleccione una opción valida: ')
+        main()
+
+print(main())
